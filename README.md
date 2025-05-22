@@ -25,7 +25,8 @@ Tadeo encontró fragmentos de archivos Docker. Vestigios rotos de lo que fue un 
 FROM node:latest
 WORKDIR /app
 COPY package.json .
-RUN npm install
+COPY index.js .
+CMD ["node", "index.js"]
 ```
 
 ### 🐍 Fragmento Python
@@ -33,6 +34,7 @@ RUN npm install
 FROM python:latest
 WORKDIR /app
 COPY requirements.txt .
+COPY app.py .
 CMD ["python", "app.py"]
 ```
 
