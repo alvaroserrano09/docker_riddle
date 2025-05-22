@@ -59,11 +59,19 @@ services:
       POSTGRES_DB: tododb
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - appnet
+   
 
   backend:
     build: ./backend
     depends_on:
       - db
+    environment:
+        DB_HOST: db
+        DB_USER: user
+        DB_PASSWORD: password
+        DB_NAME: tododb
     networks:
       - appnet
     ports:
@@ -75,11 +83,16 @@ services:
       - backend
     environment:
       API_URL: http://backend:5000
+    ports:
+      - "3000:3000"
     networks:
       - appnet
-
+    
 volumes:
   pgdata:
+
+networks:
+  appnet:
 ```
 
 
