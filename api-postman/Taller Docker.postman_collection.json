@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "ca65fcf9-9d97-4925-9464-bf9a841dc3dd",
+		"name": "Taller Docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28531429"
+	},
+	"item": [
+		{
+			"name": "Post-tasks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"winner\": \"Alvaro Serrano Lopez\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "tittle",
+							"value": "Estudiar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
